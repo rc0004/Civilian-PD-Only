@@ -1,35 +1,825 @@
+##Maximum component size of weapons will need to be 13, as even a long range cannon is size 14.
+#Changes Freighters, Construction Ships, Exploration Ships, Mining Ships, Transport Ships.
 
-
-#Ideally shouldn't use ShipHullId to find ships, as each race has their own shiphullid to refer to the same type of ship, e.g. small freighter or medium freighter
-
-#Can try to find ships to affect by searching for Role, e.g.
-#<Role>FreighterMedium</Role
-
-#Need to do for the following
-
-#FreighterSmall
-#FreighterMedium
-#FreighterLarge
-#ExplorationShip
-#MiningShip
-
-#Need to change following data
-#        <ComponentBayId>0</ComponentBayId>
-#        <Type>Weapon</Type>
-#        <MaximumComponentSize>19</MaximumComponentSize>
-
-
-
-##ComponentBayId 0 is always weapon
-#<ComponentBayId>0</ComponentBayId>
-#or txt(def.Role) is "FreighterMedium" or txt(def.Role) is "FreighterLarge" or txt(def.Role) is "ExplorationShip" or txt(def.Role) is "MiningShip":
+#Freighters
 ShipHull:
-  - update-all:
-      $where: txt(def.Role) is "FreighterSmall"
-    ComponentBays:
-      ComponentBay:
-        - (item.ComponentBayId is 0):
-          MaximumComponentSize: 19
+  - update:
+      ShipHullId: 5 # Haakonish/freightersmall
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 13 # Mortalen/freightersmall
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 120 # Human/freightersmall
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 175 # Teekan/freightersmall
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 230 # Ackdarian/freightersmall
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 578 # Zenox/freightersmall
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 663 # Boskara/freightersmall
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
 
+  - update:
+      ShipHullId: 60 # Haakonish/freightermedium
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 61 # Mortalen/freightermedium
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 143 # Human/freightermedium
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 198 # Teekan/freightermedium
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 253 # Ackdarian/freightermedium
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 601 # Zenox/freightermedium
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 686 # Boskara/freightermedium
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 84 # Haakonish/freighterlarge
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 85 # Mortalen/freighterlarge
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 152 # Human/freighterlarge
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 207 # Teekan/freighterlarge
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 262 # Ackdarian/freighterlarge
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 610 # Zenox/freighterlarge
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 695 # Boskara/freighterlarge
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
 
+#Construction ships
+#MEDIUM AND LARGE HAS WEAPON SLOT IN BayId 1
+  - update:
+      ShipHullId: 2 # Haakonish/smallconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 10 # Mortalen/smallconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 54 # Haakonish/mediumconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 55 # Mortalen/mediumconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 105 # Haakonish/largeconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 106 # Mortalen/largeconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 117 # Human/smallconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 140 # Human/mediumconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 158 # Human/largeconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 172 # Teekan/smallconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 195 # Teekan/mediumconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 213 # Teekan/largeconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 227 # Ackdarian/smallconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 250 # Ackdarian/mediumconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 268 # Ackdarian/largeconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 575 # Zenox/smallconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 598 # Zenox/medconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 616 # Zenox/largeconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 660 # Boskara/smlconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 683 # Boskara/medconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 701 # Boskara/largeconstruction
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+
+#Exploration ships
+#MED-LARGE, NEED TO CHECK MORE COMPONENT BAY IDS, THEY HAVE MULTIPLE WEAPONS.
+  - update:
+      ShipHullId: 3 # Haakonish/smlexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 11 # Mortalen/smlexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 56 # Haakonish/medexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 57 # Mortalen/medexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 107 # Haakonish/largeexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 108 # Mortalen/largeexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 118 # Human/smlexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 141 # Human/medexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 159 # Human/largeexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 173 # Teekan/smlexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 196 # Teekan/medexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 214 # Teekan/largeexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 228 # Ackdarian/smallexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 251 # Ackdarian/mediumexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 269 # Ackdarian/largeexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 576 # Zenox/smallexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 599 # Zenox/mediumexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 617 # Zenox/largeexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 661 # Boskara/smallexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 684 # Boskara/medexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 702 # Boskara/largeexplorer
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+##Mining Ships. Size medium and large have two weapon slots.
+  - update:
+      ShipHullId: 4 # Haakonish/smallminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 12 # Mortalen/smallminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 22 # Haakonish/medminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 35 # Mortalen/medminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 58 # Haakonish/largeminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 59 # Mortalen/largeminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 119 # Human/smlminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 129 # Human/mediumminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 142 # Human/largeminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 174 # Teekan/smlminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 184 # Teekan/medminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 197 # Teekan/largeminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 229 # Ackdarian/smlminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 239 # Ackdarian/medminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 252 # Ackdarian/largeminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 577 # Zenox/smlminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 587 # Zenox/medminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 600 # Zenox/largeminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 662 # Boskara/smlminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 672 # Boskara/medminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 685 # Boskara/largeminingship
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+        - ComponentBayId: 1
+          Type: Weapon
+          MaximumComponentSize: 13
+##Passenger ships - only a single slot on any of them.
+  - update:
+      ShipHullId: 23 # Haakonish/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 36 # Mortalen/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 23 # Haakonish/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 62 # Haakonish/medpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 63 # Mortalen/medpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 86 # Haakonish/largepassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 87 # Mortalen/largepassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 130 # Human/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 130 # Human/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 144 # Human/medpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 153 # Human/largepassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 185 # Teekan/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 199 # Teekan/medpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 208 # Teekan/largepassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 240 # Ackdarian/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 254 # Ackdarian/medpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 263 # Ackdarian/largepassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 588 # Zenox/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 602 # Zenox/medpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 611 # Zenox/largepassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 673 # Boskara/smlpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 687 # Boskara/medpassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
+  - update:
+      ShipHullId: 696 # Boskara/largepassengership
+      ComponentBays:
+        - ComponentBayId: 0
+          Type: Weapon
+          MaximumComponentSize: 13
 

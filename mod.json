@@ -1,0 +1,7 @@
+{
+  "name": "Civilian Point Defence Only",
+  "displayName": "CivilianShips Point Defence Only",
+  "version": "1.0.0",
+  "patchedData": "data",
+  "dependencies": []
+}

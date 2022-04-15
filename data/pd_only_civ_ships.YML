@@ -1,0 +1,35 @@
+
+
+#Ideally shouldn't use ShipHullId to find ships, as each race has their own shiphullid to refer to the same type of ship, e.g. small freighter or medium freighter
+
+#Can try to find ships to affect by searching for Role, e.g.
+#<Role>FreighterMedium</Role
+
+#Need to do for the following
+
+#FreighterSmall
+#FreighterMedium
+#FreighterLarge
+#ExplorationShip
+#MiningShip
+
+#Need to change following data
+#        <ComponentBayId>0</ComponentBayId>
+#        <Type>Weapon</Type>
+#        <MaximumComponentSize>19</MaximumComponentSize>
+
+
+
+##ComponentBayId 0 is always weapon
+#<ComponentBayId>0</ComponentBayId>
+#or txt(def.Role) is "FreighterMedium" or txt(def.Role) is "FreighterLarge" or txt(def.Role) is "ExplorationShip" or txt(def.Role) is "MiningShip":
+ShipHull:
+  - update-all:
+      $where: txt(def.Role) is "FreighterSmall"
+    ComponentBays:
+      ComponentBay:
+        - (item.ComponentBayId is 0):
+          MaximumComponentSize: 19
+
+
+

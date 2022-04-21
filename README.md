@@ -1,12 +1,12 @@
-# Version 1.0 Point Defence Slots Only on Civilian Ships
+# Version 1.05 Point Defence Slots Only on Civilian Ships
 
 ## Requirements
 
-ModLauncher v1.2.1, which can be downloaded here -- https://github.com/DW2MC/DW2ModLoader/releases/tag/v1.2.1
+At least ModLauncher v1.2.1, which can be downloaded here -- https://github.com/DW2MC/DW2ModLoader/releases
 
 ## What does this mod do?
 
-### It changes the size of every single weapons slot on civilian ships, changing them all to size 13. At that size, no weapons can be equipped, but the ship can still equip most point defence options. This takes place at the very start of a game, so all the auto-designs on your civ ships will not have a weapon at the start of a game, because there will be no weapons that are small enough to fit in the slot.
+### It changes the size of every single weapons slot on civilian ships, changing them all to size 11 [updated in 1.05]. At that size, no weapons can be equipped, but the ship can still equip most point defence options. This takes place at the very start of a game, so all the auto-designs on your civ ships will not have a weapon at the start of a game, because there will be no weapons that are small enough to fit in the slot.
 
 
 ## Installation
